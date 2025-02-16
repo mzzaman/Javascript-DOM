@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing elements</title>
+    <meta name="title" content="Traversing elements">
+</head>
+
+<body style="text-align: center;">
+    <h1>Traversing elements</h1>
+
+    <div id="main">
+        <p class="note">This is a note!</p>
+    </div>
+
+
+    <ul id="menu" style="list-style: none;">
+        <li>Home</li>
+        <li>Products</li>
+        <li class="current">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li>About Us</li>
+    </ul>
+
+    <script>
+        //JavaScript Get the Parent Element parentNode
+        let note = document.querySelector('.note')
+        // console.log(note.parentNode);
+
+        // Javascript Siblings
+
+        let current = document.querySelector('.current');
+
+        // nextSibling
+        let nextSibling = current.nextElementSibling;
+        // console.log(nextSibling.textContent); // Careers;
+
+        // previousSibling
+        let prevSibling = current.previousElementSibling;
+        // console.log(prevSibling.textContent);
+
+        // Get all siblings of an element;
+        let getSiblings = function (e) {
+            // for collecting siblings;
+            let siblings = [];
+            // if no parent, return no sibling;
+            if (!e.parentNode) {
+                return siblings;
+            }
+
+            // first child of the parent node;
+            let sibling = e.parentNode.firstChild;
+            console.log(sibling);
+
+            // collecting sibling
+            while (sibling) {
+                if (sibling.nodeType === 1 && sibling !== e) {
+                    siblings.push(sibling);
+                }
+                sibling = sibling.nextSibling;
+            }
+            return siblings;
+        }
+
+        let siblings = getSiblings(current);
+        console.log(siblings);
+
+        siblingText = siblings.map(e => e.innerHTML);
+        console.log(siblingText);
+
+    </script>
+</body>
+
+</html>
