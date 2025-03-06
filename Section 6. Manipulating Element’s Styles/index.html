@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Attributes</title>
+    <meta name="title" content="Working with Attributes">
+
+    <style>
+        #main::first-letter {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body style="text-align: center;">
+    <h1>Working with Attributes</h1>
+
+    <section>
+        <p id="content">JavaScript Setting Style Demo!</p>
+    </section>
+
+    <section>
+        <p class="message" style="color:red">
+            This is a JS getComputedStyle() Demo!
+        </p>
+        <p id='main'>JavaScript getComputedStyle() Demo for pseudo-elements</p>
+    </section>
+
+    <section>
+        <ul id="menu" class="vertical main">
+            <li>Homepage</li>
+            <li>Services</li>
+            <li>About</li>
+            <li>Contact</li>
+            <div id="note" class="info yellow-bg red-text">JS className</div>
+        </ul>
+    </section>
+
+    <section>
+        <div id="classList" class="main red">JavaScript classList</div>
+    </section>
+
+    <section>
+        <div class="box"
+            style="width:100px;height:150px;border:solid 1px #000;padding:10px;display: flex; align-items: center; justify-content: center;">
+            Content</div>
+    </section>
+
+
+    <script src="./js/manipulating-element-style.js"></script>
+</body>
+
+</html>
